@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function NewItem() {
-  const [name, setName] = useState("");
-  const [reps, setReps] = useState("");
-  const [weight, setWeight] = useState("");
-  const [sets, setSets] = useState("");
+  const [Name, setName] = useState("");
+  const [Age, setAge] = useState("");
+  const [Hometown, setTown] = useState("");
+  const [Hobby, setHobby] = useState("");
   let handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch("/api/new", {
@@ -12,7 +12,7 @@ export default function NewItem() {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify({ name, reps, weight, sets }),
+      body: JSON.stringify({ Name, Age, Hometown, Hobby }),
     });
     if (res.ok) {
       console.log("yay");
@@ -28,35 +28,35 @@ export default function NewItem() {
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <input
             name="name"
-            value={name}
+            value={Name}
             onChange={(e) => setName(e.target.value)}
             className="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring focus:border-blue-500"
             type="text"
             placeholder="Workout name"
           ></input>
           <input
-            name="reps"
-            value={reps}
-            onChange={(e) => setReps(e.target.value)}
+            name="age"
+            value={Age}
+            onChange={(e) => setAge(e.target.value)}
             className="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring focus:border-blue-500"
             type="text"
-            placeholder="Amount of reps"
+            placeholder="Amount of reps age"
           ></input>
           <input
-            name="sets"
-            value={sets}
-            onChange={(e) => setSets(e.target.value)}
+            name="homeTown"
+            value={Hometown}
+            onChange={(e) => setTown(e.target.value)}
             className="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring focus:border-blue-500"
             type="text"
-            placeholder="Amount of sets"
+            placeholder="Amount of weight homeTown"
           ></input>
           <input
-            name="weight"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
+            name="hobby"
+            value={Hobby}
+            onChange={(e) => setHobby(e.target.value)}
             className="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring focus:border-blue-500"
             type="text"
-            placeholder="Amount of weight"
+            placeholder="Amount of set hobby"
           ></input>
           <button
             type="submit"

@@ -4,9 +4,9 @@ const prisma = new PrismaClient();
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
-      const { name, reps, weight, sets } = req.body;
+      const { Name, Age, Hometown, Hobby } = req.body;
       const item = await prisma.newItem.create({
-        data: { name, reps, weight, sets },
+        data: { Name, Age, Hometown, Hobby },
       });
       return res.status(200).json(item);
     } catch (error) {
