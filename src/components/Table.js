@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import Deleted from "./Deleted";
+import Edit from "./Edit";
 
 let getTopics = async () => {
   const res = await fetch("/api/get", {
@@ -23,13 +24,13 @@ export default function Tables() {
   }, []);
   console.log(list);
   return (
-    <div className="space-y-2 w-3/4">
+    <div className="space-y-2 mt-8">
       {list.map((item, index) => (
         <div
           key={index}
           className="flex flex-row border-black border-2 p-4 space-x-3 justify-between  items-center"
         >
-          <div className="flex flex-col mr-4 px-4">
+          <div className="flex flex-col mr-4 px-4 ml-16">
             <h1 className="text-lg font-bold mb-2">Id Number</h1>
             <h2 className="text-base">{item.id}</h2>
           </div>
@@ -50,6 +51,7 @@ export default function Tables() {
             <h2 className="text-base">{item.Hobby}</h2>
           </div>
           <Deleted id={item.id} />
+          <Edit id={item.id} />
         </div>
       ))}
     </div>
