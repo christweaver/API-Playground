@@ -31,6 +31,4 @@ export default async function update(req, res) {
   }
 
   const { name, weight, reps, sets } = topic;
-
-  return <Edit name={name} weight={weight} reps={reps} sets={sets} id={id} />;
 }
