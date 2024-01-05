@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import Deleted from "./Deleted";
-import Edit from "./Edit";
 
 let getTopics = async () => {
   const res = await fetch("/api/get", {
@@ -50,8 +48,6 @@ export default function Tables() {
             <h1 className="text-lg font-bold mb-2">Hobby</h1>
             <h2 className="text-base">{item.Hobby}</h2>
           </div>
-          <Deleted id={item.id} />
-          <Edit id={item.id} />
         </div>
       ))}
     </div>

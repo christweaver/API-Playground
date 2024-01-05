@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-import Edit from "@/components/Edit";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -29,6 +27,4 @@ export default async function update(req, res) {
       return res.status(500).json({ error: "Internal Server Error" });
     }
   }
-
-  const { name, weight, reps, sets } = topic;
 }

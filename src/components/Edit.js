@@ -1,5 +1,3 @@
-"use client";
-import Home from "@/pages";
 import { useState } from "react";
 export default function Edit({ Name, Hometown, Hobby, Age, id }) {
   let [newName, setName] = useState(Name);
