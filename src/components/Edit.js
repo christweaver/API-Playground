@@ -1,4 +1,5 @@
 import { useState } from "react";
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 export default function Edit({ Name, Hometown, Hobby, Age, id }) {
   let [newName, setName] = useState(Name);
   let [newAge, setAge] = useState(Age);
@@ -10,6 +11,7 @@ export default function Edit({ Name, Hometown, Hobby, Age, id }) {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({ newName, newAge, newHometown, newHobby }),
     });

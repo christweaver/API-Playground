@@ -1,10 +1,12 @@
 import { PrismaClient } from "@prisma/client";
+import handleNotAuthenticated from "@/utils/handleNotAuthenticated";
+import isAuthenticated from "@/utils/isAuthenticated";
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   const { id } = req.query;
-  console.log(id);
-  if (!id) res.status(400).json({ error: "Bad Request" });
+  if (!id) res.status(400).json({ error: "No matching id" });
+  if (!isAuthenticated(req)) handleNotAuthenticated(res);
 
   if (req.method === "DELETE") {
     const itemId = parseInt(id);

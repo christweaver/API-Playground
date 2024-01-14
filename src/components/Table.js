@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useEffect } from "react";
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 let getTopics = async () => {
   const res = await fetch("/api/get", {
     cache: "no-store",
+    Authorization: `Bearer ${apiKey}`,
   });
   return res.json();
 };
@@ -15,7 +17,8 @@ export default function Tables() {
     async function fetchData() {
       const data = await getTopics();
       console.log(data);
-      setList(data.list);
+      const sortedList = data.list.sort((a, b) => a.id - b.id);
+      setList(sortedList);
     }
 
     fetchData();

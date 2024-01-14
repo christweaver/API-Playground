@@ -1,10 +1,14 @@
-export default function Deleted({ id }) {
-  console.log("ID", id);
+const apiKey = process.env.API_KEY;
 
+export default function Deleted({ id }) {
   const goodbye = async function () {
     try {
       const res = await fetch(`/api/delete/${id}`, {
         method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
       });
       if (!res.ok) {
         throw new Error("Failed to delete the item");

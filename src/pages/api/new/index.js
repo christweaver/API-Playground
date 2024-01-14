@@ -1,7 +1,10 @@
+import handleNotAuthenticated from "@/utils/handleNotAuthenticated";
+import isAuthenticated from "@/utils/isAuthenticated";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
+  if (!isAuthenticated(req)) handleNotAuthenticated(res);
   if (req.method === "POST") {
     try {
       const { Name, Age, Hometown, Hobby } = req.body;
