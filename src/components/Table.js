@@ -1,29 +1,38 @@
 import { useState } from "react";
 import { useEffect } from "react";
-const apiKey = process.env.NEXT_PUBLIC_API_KEY;
-
+let apiKey = process.env.NEXT_PUBLIC_API_KEY;
 let getTopics = async () => {
   const res = await fetch("/api/get", {
     cache: "no-store",
-    Authorization: `Bearer ${apiKey}`,
+    headers: {
+      "Content-type": "application/json",
+      Authorization: apiKey,
+    },
   });
-  return res.json();
+  return res.json(console.log(res));
 };
 
 export default function Tables() {
   const [list, setList] = useState([]);
-
   useEffect(() => {
     async function fetchData() {
-      const data = await getTopics();
-      console.log(data);
-      const sortedList = data.list.sort((a, b) => a.id - b.id);
-      setList(sortedList);
+      try {
+        const data = await getTopics();
+        if (data.list) {
+          const sortedList = data.list.sort((a, b) => a.id - b.id);
+          setList(sortedList);
+        } else {
+          console.error("Invalid data structure:", data);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     }
 
     fetchData();
   }, []);
-  console.log(list);
+
+  // console.log(list);
   return (
     <div className="space-y-2 mt-8">
       {list.map((item, index) => (

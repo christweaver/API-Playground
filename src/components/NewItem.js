@@ -1,5 +1,4 @@
 import { useState } from "react";
-const apiKey = process.env.API_KEY;
 
 export default function NewItem() {
   const [Name, setName] = useState("");
@@ -10,10 +9,7 @@ export default function NewItem() {
     e.preventDefault();
     const res = await fetch("/api/new", {
       method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
+
       body: JSON.stringify({ Name, Age, Hometown, Hobby }),
     });
     if (res.ok) {

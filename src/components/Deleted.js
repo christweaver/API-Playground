@@ -1,5 +1,3 @@
-const apiKey = process.env.API_KEY;
-
 export default function Deleted({ id }) {
   const goodbye = async function () {
     try {
@@ -7,7 +5,6 @@ export default function Deleted({ id }) {
         method: "DELETE",
         headers: {
           "Content-type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
         },
       });
       if (!res.ok) {
