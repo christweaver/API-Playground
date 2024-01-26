@@ -7,12 +7,12 @@ export default async function get(req, res) {
     const itemId = parseInt(id);
 
     try {
-      let list = await prisma.newItem.findUnique({
+      let item = await prisma.newItem.findUnique({
         where: {
           id: itemId,
         },
       });
-      return res.status(200).json({ list });
+      return res.status(200).json(item);
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: "Internal Server Error" });

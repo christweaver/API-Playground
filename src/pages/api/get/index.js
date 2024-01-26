@@ -4,7 +4,7 @@ import isAuthenticated from "@/utils/isAuthenticated";
 const prisma = new PrismaClient();
 
 export default async function get(req, res) {
-  if (!isAuthenticated(req)) handleNotAuthenticated(res);
+  if (!isAuthenticated(req)) handleNotAuthenticated(req);
 
   if (req.method === "GET") {
     try {

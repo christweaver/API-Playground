@@ -26,9 +26,8 @@ export default async function update(req, res) {
       }
       if (!newName && !newAge && !newHometown && !newHobby) {
         return res.status(400).json({
-          error: {
-            msg: "To update the data you must change the variable you are atempting to update to either newName, newAge, newHometown or newHobby",
-          },
+          error:
+            "To update the data you must change the variable you are atempting to update to either newName, newAge, newHometown or newHobby",
         });
       }
 
@@ -46,7 +45,7 @@ export default async function update(req, res) {
 
       console.log(item);
 
-      return res.status(200).json({ item });
+      return res.status(200).json(item);
     } catch (error) {
       return res.status(400).json({
         error: {

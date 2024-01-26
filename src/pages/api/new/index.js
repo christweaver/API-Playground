@@ -17,18 +17,18 @@ export default async function handler(req, res) {
       const item = await prisma.newItem.create({
         data: { Name, Age, Hometown, Hobby },
       });
+      console.log(item);
 
       return res.status(200).json(item);
     } catch (errors) {
       console.error(errors);
       return res.status(400).json({
-        error: {
-          msg: "Verify that all variables are complete and adhere to the required string format.",
-        },
+        Error:
+          "Verify that all variables are complete and adhere to the required string format.",
       });
     }
   } else {
-    return res.status(401).json({ message: "Not authorized" });
+    return res.status(401).json({ error: "Not authorized" });
   }
 }
 
