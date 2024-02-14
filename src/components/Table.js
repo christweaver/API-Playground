@@ -34,31 +34,31 @@ export default function Tables() {
 
   // console.log(list);
   return (
-    <div className="space-y-2 mt-8">
+    <div className="space-y-4 mt-8 mx-3">
       {list.map((item, index) => (
         <div
           key={index}
-          className="flex flex-row border-black border-2 p-4 space-x-3 justify-between  items-center"
+          className="flex flex-row border-black border-2 p-4 justify-between items-center"
         >
-          <div className="flex flex-col mr-4 px-4 ml-16">
+          <div className="flex flex-col ml-9 px-4">
             <h1 className="text-lg font-bold mb-2">Id Number</h1>
-            <h2 className="text-base">{item.id}</h2>
+            <h2 className="text-lg min-w-32">{item.id}</h2>
           </div>
-          <div className="flex flex-col mr-4 px-4">
+          <div className="flex flex-col px-4">
             <h1 className="text-lg font-bold mb-2">Name</h1>
-            <h2 className="text-base">{item.Name}</h2>
+            <h2 className="text-lg min-w-32 text-left">{item.Name}</h2>
           </div>
-          <div className="flex flex-col mr-4 px-4">
+          <div className="flex flex-col  px-4">
             <h1 className="text-lg font-bold mb-2">Age</h1>
-            <h2 className="text-base">{item.Age}</h2>
+            <h2 className="text-lg min-w-32 text-left">{item.Age}</h2>
           </div>
-          <div className="flex flex-col mr-4 px-4">
+          <div className="flex flex-col px-4">
             <h1 className="text-lg font-bold mb-2">Hometown</h1>
-            <h2 className="text-base">{item.Hometown}</h2>
+            <h2 className="text-lg min-w-32 text-left">{item.Hometown}</h2>
           </div>
           <div className="flex flex-col px-4">
             <h1 className="text-lg font-bold mb-2">Hobby</h1>
-            <h2 className="text-base">{item.Hobby}</h2>
+            <h2 className="text-lg min-w-32 text-left">{item.Hobby}</h2>
           </div>
         </div>
       ))}

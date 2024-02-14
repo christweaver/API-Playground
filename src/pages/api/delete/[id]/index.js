@@ -5,7 +5,6 @@ const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   const { id } = req.query;
-  if (!id) res.status(400).json({ error: "No matching id" });
   if (!isAuthenticated(req)) handleNotAuthenticated(res);
 
   if (req.method === "DELETE") {
@@ -19,7 +18,7 @@ export default async function handler(req, res) {
       return res.status(200).json({ message: "Deleted" });
     } catch (error) {
       console.error(error);
-      return res.status(500).json({ error: "Internal Server Error" });
+      return res.status(400).json({ error: "No matching ID" });
     }
   }
 }
