@@ -1,40 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## API Playground
 
-## Getting Started
+The API Playground is an application designed to help non-developers understand how APIs work by providing a user-friendly interface to interact with various HTTP requests, such as POST, GET, PATCH, and DELETE. With the support of tools like Postman, users can experiment with different API requests and responses in a controlled environment.
 
-First, run the development server:
+![devDevelopers](https://github.com/christweaver/kelson-app/assets/100533989/035e5699-3675-4534-9537-5764cd2159e4)
+
+## Technologies Used:
+- Next.js
+- Prisma
+- PostgreSQL
+- Postman
+- Express Validator
+
+## Features:
+1. HTTP Request Methods: Users can perform different HTTP request methods like POST, GET, PATCH, and DELETE to interact with the API endpoints.
+
+2. Postman Integration: The application is compatible with Postman, a popular API client, allowing users to easily run and test API requests.
+
+3. Prisma and PostgreSQL Integration: The API Playground utilizes Prisma as the ORM (Object-Relational Mapping) tool and PostgreSQL as the database backend. This ensures efficient data management and persistence.
+
+4. API Key Protection: To ensure security, the application is protected via API keys. Users need to provide a valid API key to access the API endpoints and perform actions.
+
+5. Express Validator: Input validation is implemented using Express Validator, ensuring that user-provided data meets specified criteria before processing.
+
+## Getting Started:
+To set up and run the API Playground locally on your machine, follow these steps:
+
+Clone the Repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <github>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install Dependencies:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+cd kelson
+npm install
+```
+Request API key
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Run the Application:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npm start
+```
+Access the Playground:
+Once the server is running, open your web browser and navigate to http://localhost:3000 to access the API Playground.
