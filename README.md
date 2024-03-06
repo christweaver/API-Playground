@@ -12,37 +12,52 @@ The API Playground is an application designed to help non-developers understand 
 - Express Validator
 
 ## Features:
-1. HTTP Request Methods: Users can perform different HTTP request methods like POST, GET, PATCH, and DELETE to interact with the API endpoints.
+- HTTP Request Methods: Users can perform different HTTP request methods like POST, GET, PATCH, and DELETE to interact with the API endpoints.
 
-2. Postman Integration: The application is compatible with Postman, a popular API client, allowing users to easily run and test API requests.
+- Postman Integration: The application is compatible with Postman, a popular API client, allowing users to easily run and test API requests.
 
-3. Prisma and PostgreSQL Integration: The API Playground utilizes Prisma as the ORM (Object-Relational Mapping) tool and PostgreSQL as the database backend. This ensures efficient data management and persistence.
+- Prisma and PostgreSQL Integration: The API Playground utilizes Prisma as the ORM (Object-Relational Mapping) tool and PostgreSQL as the database backend. This ensures efficient data management and persistence.
 
-4. API Key Protection: To ensure security, the application is protected via API keys. Users need to provide a valid API key to access the API endpoints and perform actions.
+- API Key Protection: To ensure security, the application is protected via API keys. Users need to provide a valid API key to access the API endpoints and perform actions.
 
-5. Express Validator: Input validation is implemented using Express Validator, ensuring that user-provided data meets specified criteria before processing.
+- Express Validator: Input validation is implemented using Express Validator, ensuring that user-provided data meets specified criteria before processing.
 
-## Getting Started:
+## Usage
+1. Request API Key
+   
+2. Use Postman or any API client to send requests to the provided endpoints.
+
+3. Experiment with different HTTP methods (POST, GET, PATCH, DELETE) and observe the corresponding responses.
+
+4. Ensure that input data provided in requests adhere to the specified validation rules enforced by Express Validator.
+
+## Installation:
 To set up and run the API Playground locally on your machine, follow these steps:
 
-Clone the Repository:
+1. Clone the Repository:
 
 ```bash
-git clone <github>
+git clone https://github.com/christweaver/kelson-app.git
 ```
 
-Install Dependencies:
+2. Install Dependencies:
 
 ```bash
 cd kelson
 npm install
 ```
-Request API key
+3. Request API keys
 
-Run the Application:
+4. Run the Application:
 
 ```bash
 npm start
 ```
-Access the Playground:
+5. Access the Playground:
 Once the server is running, open your web browser and navigate to http://localhost:3000 to access the API Playground.
+
+6. Run Postman to make HTTP requests
+
+
+##
+Thank you for using the API Playground! We hope this tool helps you gain a better understanding of API concepts and practices. Happy exploring! 🚀🔑
